@@ -32,6 +32,7 @@ public class PersonServiceImpl implements PersonService {
     @Override
     @Transactional
     public List<PersonDto> deletePersonById(Integer id) {
+        personDao.deleteById(id);
         return personDao.findAll().stream().map(personMapper::toDto).collect(Collectors.toList());
     }
 

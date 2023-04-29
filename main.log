@@ -470,3 +470,8 @@ Consider defining a bean of type 'com.example.vote.mapper.PersonMapper' in your 
 2023-04-29 22:53:21.228 INFO DispatcherServlet - Initializing Servlet 'dispatcherServlet'
 2023-04-29 22:53:21.229 INFO DispatcherServlet - Completed initialization in 1 ms
 2023-04-29 22:53:40.435 ERROR PersonRestController - Person id 100 not found
+2023-04-29 23:30:23.756 WARN HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=30m26s804ms).
+2023-04-29 23:44:19.197 WARN HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8m55s347ms).
+2023-04-29 23:46:59.743 INFO LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-29 23:46:59.763 INFO HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-04-29 23:46:59.784 INFO HikariDataSource - HikariPool-1 - Shutdown completed.
