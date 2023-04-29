@@ -232,3 +232,241 @@ Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.core.exc.Stre
 2023-04-29 19:45:28.887 INFO TestDispatcherServlet - Completed initialization in 2 ms
 2023-04-29 19:45:28.911 INFO PersonRestControllerTest - Started PersonRestControllerTest in 1.901 seconds (JVM running for 3.291)
 2023-04-29 19:45:29.243 ERROR PersonRestController - Person NOt Found, check your request
+2023-04-29 21:56:33.193 INFO VoteApplication - Starting VoteApplication using Java 15.0.2 on MacBook-Pro-Sergej.local with PID 43273 (/Users/shehovtsovsu/Desktop/Solvery/Vote/Vote/build/classes/java/main started by shehovtsovsu in /Users/shehovtsovsu/Desktop/Solvery/Vote/Vote)
+2023-04-29 21:56:33.196 INFO VoteApplication - No active profile set, falling back to default profiles: default
+2023-04-29 21:56:34.212 INFO RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-29 21:56:34.265 INFO RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 45 ms. Found 1 JPA repository interfaces.
+2023-04-29 21:56:34.793 INFO TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-04-29 21:56:34.805 INFO StandardService - Starting service [Tomcat]
+2023-04-29 21:56:34.806 INFO StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.55]
+2023-04-29 21:56:34.946 INFO [/] - Initializing Spring embedded WebApplicationContext
+2023-04-29 21:56:34.946 INFO ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1711 ms
+2023-04-29 21:56:35.082 INFO HikariDataSource - HikariPool-1 - Starting...
+2023-04-29 21:56:35.296 INFO HikariDataSource - HikariPool-1 - Start completed.
+2023-04-29 21:56:35.303 INFO H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:mydatabase'
+2023-04-29 21:56:35.448 INFO VersionPrinter - Flyway Community Edition 7.7.3 by Redgate
+2023-04-29 21:56:35.488 INFO DatabaseType - Database: jdbc:h2:mem:mydatabase (H2 1.4)
+2023-04-29 21:56:35.562 INFO DbValidate - Successfully validated 2 migrations (execution time 00:00.029s)
+2023-04-29 21:56:35.580 INFO JdbcTableSchemaHistory - Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+2023-04-29 21:56:35.604 INFO DefaultSqlScriptExecutor - 0 rows affected
+2023-04-29 21:56:35.607 INFO DefaultSqlScriptExecutor - 0 rows affected
+2023-04-29 21:56:35.620 INFO DbMigrate - Current version of schema "PUBLIC": << Empty Schema >>
+2023-04-29 21:56:35.622 INFO DbMigrate - Migrating schema "PUBLIC" to version "1 - schema migration"
+2023-04-29 21:56:35.623 INFO DefaultSqlScriptExecutor - 0 rows affected
+2023-04-29 21:56:35.628 INFO DefaultSqlScriptExecutor - 0 rows affected
+2023-04-29 21:56:35.647 INFO DbMigrate - Migrating schema "PUBLIC" to version "2 - data migration"
+2023-04-29 21:56:35.648 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 21:56:35.648 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 21:56:35.648 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 21:56:35.648 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 21:56:35.648 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 21:56:35.649 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 21:56:35.649 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 21:56:35.649 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 21:56:35.649 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 21:56:35.649 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 21:56:35.650 INFO DefaultSqlScriptExecutor - 0 rows affected
+2023-04-29 21:56:35.651 INFO DefaultSqlScriptExecutor - 0 rows affected
+2023-04-29 21:56:35.651 INFO DefaultSqlScriptExecutor - 0 rows affected
+2023-04-29 21:56:35.651 INFO DefaultSqlScriptExecutor - 0 rows affected
+2023-04-29 21:56:35.665 INFO DbMigrate - Successfully applied 2 migrations to schema "PUBLIC", now at version v2 (execution time 00:00.049s)
+2023-04-29 21:56:35.745 INFO LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-29 21:56:35.822 INFO Version - HHH000412: Hibernate ORM core version 5.4.32.Final
+2023-04-29 21:56:36.030 INFO Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-29 21:56:36.217 INFO Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-04-29 21:56:36.857 INFO JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-29 21:56:36.874 INFO LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-29 21:56:37.961 INFO EndpointLinksResolver - Exposing 5 endpoint(s) beneath base path '/actuator'
+2023-04-29 21:56:38.000 INFO TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-29 21:56:38.014 INFO VoteApplication - Started VoteApplication in 5.241 seconds (JVM running for 6.402)
+2023-04-29 21:56:38.094 INFO [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-29 21:56:38.094 INFO DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-04-29 21:56:38.095 INFO DispatcherServlet - Completed initialization in 1 ms
+2023-04-29 22:08:12.968 INFO LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-29 22:08:12.987 INFO HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-04-29 22:08:13.002 INFO HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-04-29 22:43:26.780 INFO VoteApplication - Starting VoteApplication using Java 15.0.2 on MacBook-Pro-Sergej.local with PID 46365 (/Users/shehovtsovsu/Desktop/Solvery/Vote/Vote/build/classes/java/main started by shehovtsovsu in /Users/shehovtsovsu/Desktop/Solvery/Vote/Vote)
+2023-04-29 22:43:26.783 INFO VoteApplication - No active profile set, falling back to default profiles: default
+2023-04-29 22:43:27.755 INFO RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-29 22:43:27.813 INFO RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 49 ms. Found 1 JPA repository interfaces.
+2023-04-29 22:43:28.355 INFO TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-04-29 22:43:28.364 INFO StandardService - Starting service [Tomcat]
+2023-04-29 22:43:28.364 INFO StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.55]
+2023-04-29 22:43:28.484 INFO [/] - Initializing Spring embedded WebApplicationContext
+2023-04-29 22:43:28.484 INFO ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1658 ms
+2023-04-29 22:43:28.604 INFO HikariDataSource - HikariPool-1 - Starting...
+2023-04-29 22:43:28.887 INFO HikariDataSource - HikariPool-1 - Start completed.
+2023-04-29 22:43:28.896 INFO H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:mydatabase'
+2023-04-29 22:43:29.016 INFO VersionPrinter - Flyway Community Edition 7.7.3 by Redgate
+2023-04-29 22:43:29.043 INFO DatabaseType - Database: jdbc:h2:mem:mydatabase (H2 1.4)
+2023-04-29 22:43:29.132 INFO DbValidate - Successfully validated 2 migrations (execution time 00:00.048s)
+2023-04-29 22:43:29.145 INFO JdbcTableSchemaHistory - Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+2023-04-29 22:43:29.166 INFO DefaultSqlScriptExecutor - 0 rows affected
+2023-04-29 22:43:29.169 INFO DefaultSqlScriptExecutor - 0 rows affected
+2023-04-29 22:43:29.188 INFO DbMigrate - Current version of schema "PUBLIC": << Empty Schema >>
+2023-04-29 22:43:29.192 INFO DbMigrate - Migrating schema "PUBLIC" to version "1 - schema migration"
+2023-04-29 22:43:29.194 INFO DefaultSqlScriptExecutor - 0 rows affected
+2023-04-29 22:43:29.198 INFO DefaultSqlScriptExecutor - 0 rows affected
+2023-04-29 22:43:29.217 INFO DbMigrate - Migrating schema "PUBLIC" to version "2 - data migration"
+2023-04-29 22:43:29.218 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 22:43:29.218 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 22:43:29.218 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 22:43:29.218 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 22:43:29.218 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 22:43:29.218 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 22:43:29.219 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 22:43:29.219 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 22:43:29.219 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 22:43:29.219 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 22:43:29.220 INFO DefaultSqlScriptExecutor - 0 rows affected
+2023-04-29 22:43:29.220 INFO DefaultSqlScriptExecutor - 0 rows affected
+2023-04-29 22:43:29.220 INFO DefaultSqlScriptExecutor - 0 rows affected
+2023-04-29 22:43:29.221 INFO DefaultSqlScriptExecutor - 0 rows affected
+2023-04-29 22:43:29.234 INFO DbMigrate - Successfully applied 2 migrations to schema "PUBLIC", now at version v2 (execution time 00:00.055s)
+2023-04-29 22:43:29.314 INFO LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-29 22:43:29.378 INFO Version - HHH000412: Hibernate ORM core version 5.4.32.Final
+2023-04-29 22:43:29.552 INFO Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-29 22:43:29.697 INFO Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-04-29 22:43:30.267 INFO JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-29 22:43:30.278 INFO LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-29 22:43:30.487 WARN AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'personRestController' defined in file [/Users/shehovtsovsu/Desktop/Solvery/Vote/Vote/build/classes/java/main/com/example/vote/controller/PersonRestController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'personServiceImpl' defined in file [/Users/shehovtsovsu/Desktop/Solvery/Vote/Vote/build/classes/java/main/com/example/vote/service/PersonServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.example.vote.mapper.PersonMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2023-04-29 22:43:30.488 INFO LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-29 22:43:30.491 INFO HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-04-29 22:43:30.493 INFO HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-04-29 22:43:30.494 INFO StandardService - Stopping service [Tomcat]
+2023-04-29 22:43:30.508 INFO ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-04-29 22:43:30.526 ERROR LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in com.example.vote.service.PersonServiceImpl required a bean of type 'com.example.vote.mapper.PersonMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.example.vote.mapper.PersonMapper' in your configuration.
+
+2023-04-29 22:46:40.199 INFO VoteApplication - Starting VoteApplication using Java 15.0.2 on MacBook-Pro-Sergej.local with PID 46573 (/Users/shehovtsovsu/Desktop/Solvery/Vote/Vote/build/classes/java/main started by shehovtsovsu in /Users/shehovtsovsu/Desktop/Solvery/Vote/Vote)
+2023-04-29 22:46:40.201 INFO VoteApplication - No active profile set, falling back to default profiles: default
+2023-04-29 22:46:41.147 INFO RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-29 22:46:41.205 INFO RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 50 ms. Found 1 JPA repository interfaces.
+2023-04-29 22:46:41.665 INFO TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-04-29 22:46:41.674 INFO StandardService - Starting service [Tomcat]
+2023-04-29 22:46:41.675 INFO StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.55]
+2023-04-29 22:46:41.802 INFO [/] - Initializing Spring embedded WebApplicationContext
+2023-04-29 22:46:41.802 INFO ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1559 ms
+2023-04-29 22:46:41.931 INFO HikariDataSource - HikariPool-1 - Starting...
+2023-04-29 22:46:42.143 INFO HikariDataSource - HikariPool-1 - Start completed.
+2023-04-29 22:46:42.150 INFO H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:mydatabase'
+2023-04-29 22:46:42.267 INFO VersionPrinter - Flyway Community Edition 7.7.3 by Redgate
+2023-04-29 22:46:42.294 INFO DatabaseType - Database: jdbc:h2:mem:mydatabase (H2 1.4)
+2023-04-29 22:46:42.363 INFO DbValidate - Successfully validated 2 migrations (execution time 00:00.032s)
+2023-04-29 22:46:42.374 INFO JdbcTableSchemaHistory - Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+2023-04-29 22:46:42.394 INFO DefaultSqlScriptExecutor - 0 rows affected
+2023-04-29 22:46:42.397 INFO DefaultSqlScriptExecutor - 0 rows affected
+2023-04-29 22:46:42.408 INFO DbMigrate - Current version of schema "PUBLIC": << Empty Schema >>
+2023-04-29 22:46:42.411 INFO DbMigrate - Migrating schema "PUBLIC" to version "1 - schema migration"
+2023-04-29 22:46:42.412 INFO DefaultSqlScriptExecutor - 0 rows affected
+2023-04-29 22:46:42.415 INFO DefaultSqlScriptExecutor - 0 rows affected
+2023-04-29 22:46:42.432 INFO DbMigrate - Migrating schema "PUBLIC" to version "2 - data migration"
+2023-04-29 22:46:42.432 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 22:46:42.432 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 22:46:42.433 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 22:46:42.433 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 22:46:42.433 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 22:46:42.433 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 22:46:42.433 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 22:46:42.434 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 22:46:42.434 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 22:46:42.434 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 22:46:42.435 INFO DefaultSqlScriptExecutor - 0 rows affected
+2023-04-29 22:46:42.435 INFO DefaultSqlScriptExecutor - 0 rows affected
+2023-04-29 22:46:42.435 INFO DefaultSqlScriptExecutor - 0 rows affected
+2023-04-29 22:46:42.435 INFO DefaultSqlScriptExecutor - 0 rows affected
+2023-04-29 22:46:42.446 INFO DbMigrate - Successfully applied 2 migrations to schema "PUBLIC", now at version v2 (execution time 00:00.042s)
+2023-04-29 22:46:42.529 INFO LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-29 22:46:42.588 INFO Version - HHH000412: Hibernate ORM core version 5.4.32.Final
+2023-04-29 22:46:42.749 INFO Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-29 22:46:42.877 INFO Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-04-29 22:46:43.417 INFO JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-29 22:46:43.427 INFO LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-29 22:46:43.659 WARN AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'personRestController' defined in file [/Users/shehovtsovsu/Desktop/Solvery/Vote/Vote/build/classes/java/main/com/example/vote/controller/PersonRestController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'personServiceImpl' defined in file [/Users/shehovtsovsu/Desktop/Solvery/Vote/Vote/build/classes/java/main/com/example/vote/service/PersonServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.example.vote.mapper.PersonMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2023-04-29 22:46:43.660 INFO LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-29 22:46:43.662 INFO HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-04-29 22:46:43.664 INFO HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-04-29 22:46:43.665 INFO StandardService - Stopping service [Tomcat]
+2023-04-29 22:46:43.678 INFO ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-04-29 22:46:43.696 ERROR LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in com.example.vote.service.PersonServiceImpl required a bean of type 'com.example.vote.mapper.PersonMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.example.vote.mapper.PersonMapper' in your configuration.
+
+2023-04-29 22:53:17.037 INFO VoteApplication - Starting VoteApplication using Java 15.0.2 on MacBook-Pro-Sergej.local with PID 47055 (/Users/shehovtsovsu/Desktop/Solvery/Vote/Vote/build/classes/java/main started by shehovtsovsu in /Users/shehovtsovsu/Desktop/Solvery/Vote/Vote)
+2023-04-29 22:53:17.040 INFO VoteApplication - No active profile set, falling back to default profiles: default
+2023-04-29 22:53:17.984 INFO RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-29 22:53:18.042 INFO RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 47 ms. Found 1 JPA repository interfaces.
+2023-04-29 22:53:18.491 INFO TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-04-29 22:53:18.500 INFO StandardService - Starting service [Tomcat]
+2023-04-29 22:53:18.501 INFO StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.55]
+2023-04-29 22:53:18.617 INFO [/] - Initializing Spring embedded WebApplicationContext
+2023-04-29 22:53:18.617 INFO ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1531 ms
+2023-04-29 22:53:18.738 INFO HikariDataSource - HikariPool-1 - Starting...
+2023-04-29 22:53:19.027 INFO HikariDataSource - HikariPool-1 - Start completed.
+2023-04-29 22:53:19.033 INFO H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:mydatabase'
+2023-04-29 22:53:19.143 INFO VersionPrinter - Flyway Community Edition 7.7.3 by Redgate
+2023-04-29 22:53:19.176 INFO DatabaseType - Database: jdbc:h2:mem:mydatabase (H2 1.4)
+2023-04-29 22:53:19.239 INFO DbValidate - Successfully validated 2 migrations (execution time 00:00.027s)
+2023-04-29 22:53:19.250 INFO JdbcTableSchemaHistory - Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+2023-04-29 22:53:19.271 INFO DefaultSqlScriptExecutor - 0 rows affected
+2023-04-29 22:53:19.275 INFO DefaultSqlScriptExecutor - 0 rows affected
+2023-04-29 22:53:19.289 INFO DbMigrate - Current version of schema "PUBLIC": << Empty Schema >>
+2023-04-29 22:53:19.292 INFO DbMigrate - Migrating schema "PUBLIC" to version "1 - schema migration"
+2023-04-29 22:53:19.293 INFO DefaultSqlScriptExecutor - 0 rows affected
+2023-04-29 22:53:19.297 INFO DefaultSqlScriptExecutor - 0 rows affected
+2023-04-29 22:53:19.315 INFO DbMigrate - Migrating schema "PUBLIC" to version "2 - data migration"
+2023-04-29 22:53:19.315 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 22:53:19.316 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 22:53:19.316 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 22:53:19.316 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 22:53:19.316 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 22:53:19.317 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 22:53:19.317 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 22:53:19.317 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 22:53:19.317 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 22:53:19.317 INFO DefaultSqlScriptExecutor - 1 rows affected
+2023-04-29 22:53:19.318 INFO DefaultSqlScriptExecutor - 0 rows affected
+2023-04-29 22:53:19.319 INFO DefaultSqlScriptExecutor - 0 rows affected
+2023-04-29 22:53:19.319 INFO DefaultSqlScriptExecutor - 0 rows affected
+2023-04-29 22:53:19.319 INFO DefaultSqlScriptExecutor - 0 rows affected
+2023-04-29 22:53:19.330 INFO DbMigrate - Successfully applied 2 migrations to schema "PUBLIC", now at version v2 (execution time 00:00.047s)
+2023-04-29 22:53:19.397 INFO LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-29 22:53:19.453 INFO Version - HHH000412: Hibernate ORM core version 5.4.32.Final
+2023-04-29 22:53:19.597 INFO Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-29 22:53:19.736 INFO Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-04-29 22:53:20.243 INFO JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-29 22:53:20.253 INFO LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-29 22:53:20.931 INFO EndpointLinksResolver - Exposing 5 endpoint(s) beneath base path '/actuator'
+2023-04-29 22:53:20.972 INFO TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-29 22:53:20.984 INFO VoteApplication - Started VoteApplication in 4.633 seconds (JVM running for 6.15)
+2023-04-29 22:53:21.228 INFO [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-29 22:53:21.228 INFO DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-04-29 22:53:21.229 INFO DispatcherServlet - Completed initialization in 1 ms
+2023-04-29 22:53:40.435 ERROR PersonRestController - Person id 100 not found

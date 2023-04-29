@@ -4,6 +4,7 @@ import com.example.vote.converter.PersonConverter;
 import com.example.vote.dao.PersonDao;
 import com.example.vote.dto.PersonDto;
 import com.example.vote.exaption.PersonNotFoundException;
+import com.example.vote.mapper.PersonMapper;
 import com.example.vote.model.Person;
 import com.example.vote.model.VoteType;
 import org.junit.jupiter.api.BeforeEach;
@@ -30,12 +31,12 @@ public class PersonServiceTest {
     private PersonDao personDao;
 
     @Mock
-    private PersonConverter personConverter;
+    private PersonMapper personMapper;
 
     @BeforeEach
     public void setup() {
         MockitoAnnotations.initMocks(this);
-        personService = new PersonServiceImpl(personDao, personConverter);
+        personService = new PersonServiceImpl(personDao, personMapper);
     }
 
     @Test
@@ -47,7 +48,7 @@ public class PersonServiceTest {
 
         List<PersonDto> personDtos = new ArrayList<>();
         personDtos.add(new PersonDto(1, "John", "123456789", VoteType.YES));
-        when(personConverter.entityToDto(any())).thenReturn(personDtos.get(0));
+        when(personMapper.toDto(any())).thenReturn(personDtos.get(0));
 
         List<PersonDto> result = personService.getAllPersons();
         assertEquals(1, result.size());
@@ -65,7 +66,7 @@ public class PersonServiceTest {
 
         List<PersonDto> personDtos = new ArrayList<>();
         personDtos.add(new PersonDto(1, "John", "123456789", VoteType.YES));
-        when(personConverter.entityToDto(any())).thenReturn(personDtos.get(0));
+        when(personMapper.toDto(any())).thenReturn(personDtos.get(0));
 
         List<PersonDto> result = personService.deletePersonById(1);
         assertEquals(1, result.size());
@@ -81,7 +82,7 @@ public class PersonServiceTest {
         when(personDao.save(any(Person.class))).thenReturn(person);
 
         PersonDto personDto = new PersonDto(null, "John", "123456789", VoteType.YES);
-        when(personConverter.entityToDto(any())).thenReturn(new PersonDto(1, "John", "123456789", VoteType.YES));
+        when(personMapper.toDto(any())).thenReturn(new PersonDto(1, "John", "123456789", VoteType.YES));
 
         PersonDto result = personService.createPerson(personDto);
         assertEquals("John", result.getName());
@@ -100,7 +101,7 @@ public class PersonServiceTest {
         when(personDao.save(any(Person.class))).thenReturn(person);
 
         PersonDto personDto = new PersonDto(1, "Johnny", "987654321", VoteType.NO);
-        when(personConverter.entityToDto(any())).thenReturn(personDto);
+        when(personMapper.toDto(any())).thenReturn(personDto);
 
         PersonDto result = personService.updatePerson(personDto);
         assertEquals("Johnny", result.getName());
@@ -112,12 +113,11 @@ public class PersonServiceTest {
     @DisplayName("должен уметь отдавать человека по id")
     public void testGetPersonById() throws PersonNotFoundException {
         PersonDao personDao = mock(PersonDao.class);
-        PersonConverter personConverter = mock(PersonConverter.class);
 
         when(personDao.findById(1)).thenReturn(Optional.of(new Person(1, "John", "123456789", VoteType.YES)));
-        when(personConverter.entityToDto(any(Person.class))).thenReturn(new PersonDto(1, "John", "123456789", VoteType.YES));
+        when(personMapper.toDto(any(Person.class))).thenReturn(new PersonDto(1, "John", "123456789", VoteType.YES));
 
-        PersonService personService = new PersonServiceImpl(personDao, personConverter);
+        PersonService personService = new PersonServiceImpl(personDao, personMapper);
         PersonDto personDto = personService.getPersonById(1);
 
         assertNotNull(personDto);
@@ -138,7 +138,7 @@ public class PersonServiceTest {
             assertEquals("Person id 1 not found", e.getMessage());
         }
         verify(personDao, times(1)).findById(1);
-        verify(personConverter, never()).entityToDto(any());
+        verify(personMapper, never()).toDto(any());
     }
 
 
