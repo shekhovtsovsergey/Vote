@@ -7,16 +7,20 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name = "persons")
+@Table(name = "persons", schema = "vote") // schema
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 public class Person {
 
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // sequence
     private Integer id;
+    /**
+     * наиме6новаеием
+     */
     private String name;
     private String document;
     @Enumerated(EnumType.STRING)

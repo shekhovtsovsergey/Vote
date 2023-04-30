@@ -2,7 +2,7 @@ package com.example.vote.controller;
 
 
 import com.example.vote.dto.PersonDto;
-import com.example.vote.exaption.PersonNotFoundException;
+import com.example.vote.exception.PersonNotFoundException;
 import com.example.vote.service.PersonService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -15,17 +15,18 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @Slf4j
+@RequestMapping(path = "/persons")
 public class PersonRestController {
 
-    private final PersonService personService;
+    private final PersonService service;
 
-    @GetMapping("/api/v1/persons")
+    @GetMapping
     public List<PersonDto> getPersonList() {
         return personService.getAllPersons();
     }
 
-    @GetMapping("/api/v1/person/{id}")
-    public PersonDto getPersonById(@PathVariable(name = "id") Integer id) throws PersonNotFoundException {
+    @GetMapping("/{id}")
+    public PersonDto getPersonById(@PathVariable Integer id) throws PersonNotFoundException {
         return personService.getPersonById(id);
     }
 
@@ -44,7 +45,10 @@ public class PersonRestController {
         return personService.createPerson(PersonDto);
     }
 
-    @ExceptionHandler({PersonNotFoundException.class})
+    @ExceptionHandler({
+            PersonNotFoundException.class,
+
+    })
     private ResponseEntity<String> handleNotFound(Exception e) {
         log.error(e.getMessage());
         return ResponseEntity.badRequest().body(e.getMessage());

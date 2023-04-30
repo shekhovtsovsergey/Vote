@@ -1,9 +1,8 @@
 package com.example.vote.service;
 
-import com.example.vote.converter.PersonConverter;
 import com.example.vote.dao.PersonDao;
 import com.example.vote.dto.PersonDto;
-import com.example.vote.exaption.PersonNotFoundException;
+import com.example.vote.exception.PersonNotFoundException;
 import com.example.vote.mapper.PersonMapper;
 import com.example.vote.model.Person;
 import com.example.vote.model.VoteType;
@@ -42,9 +41,11 @@ public class PersonServiceTest {
     @Test
     @DisplayName("должен уметь отдавать список человек")
     public void testGetAllPersons() {
-        List<Person> persons = new ArrayList<>();
-        persons.add(new Person(1, "John", "123456789", VoteType.YES));
-        when(personDao.findAll()).thenReturn(persons);
+//        List<Person> persons = new ArrayList<>(); // List.of
+  //      persons.add(new Person(1, "John", "123456789", VoteType.YES));
+    //    when(personDao.findAll()).thenReturn(persons);
+
+        when(personDao.findAll()).thenReturn(List.of(new Person(1, "John", "123456789", VoteType.YES)));
 
         List<PersonDto> personDtos = new ArrayList<>();
         personDtos.add(new PersonDto(1, "John", "123456789", VoteType.YES));
@@ -132,11 +133,12 @@ public class PersonServiceTest {
     @DisplayName("должен уметь возвращать ошибку если идентификатор человека не найден")
     public void testGetPersonByIdNotFound() {
         when(personDao.findById(1)).thenReturn(Optional.empty());
-        try {
+        try {//assertThrows
             personService.getPersonById(1);
         } catch (PersonNotFoundException e) {
             assertEquals("Person id 1 not found", e.getMessage());
         }
+        //
         verify(personDao, times(1)).findById(1);
         verify(personMapper, never()).toDto(any());
     }

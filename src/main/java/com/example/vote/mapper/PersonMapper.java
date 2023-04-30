@@ -7,9 +7,7 @@ import org.mapstruct.factory.Mappers;
 import org.springframework.stereotype.Component;
 
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface PersonMapper {
-
-    PersonMapper INSTANCE= Mappers.getMapper(PersonMapper.class);
     PersonDto toDto(Person person);
 }

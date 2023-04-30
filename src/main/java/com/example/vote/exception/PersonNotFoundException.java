@@ -1,4 +1,4 @@
-package com.example.vote.exaption;
+package com.example.vote.exception;
 
 public class PersonNotFoundException extends ObjectNotFoundException {
 

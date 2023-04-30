@@ -1,7 +1,7 @@
 package com.example.vote.service;
 
 import com.example.vote.dto.PersonDto;
-import com.example.vote.exaption.PersonNotFoundException;
+import com.example.vote.exception.PersonNotFoundException;
 
 import java.util.List;
 

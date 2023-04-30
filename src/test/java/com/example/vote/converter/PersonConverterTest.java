@@ -12,6 +12,7 @@ import org.mockito.MockitoAnnotations;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
+//
 public class PersonConverterTest {
 
     @Mock
@@ -25,7 +26,7 @@ public class PersonConverterTest {
 
     @BeforeEach
     public void setUp() {
-        MockitoAnnotations.initMocks(this);
+        //MockitoAnnotations.initMocks(this); // Mockito
         when(person.getId()).thenReturn(1);
         when(person.getName()).thenReturn("John");
         when(person.getDocument()).thenReturn("123456789");

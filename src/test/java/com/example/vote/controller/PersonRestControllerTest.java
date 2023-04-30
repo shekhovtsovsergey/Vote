@@ -2,7 +2,7 @@ package com.example.vote.controller;
 
 
 import com.example.vote.dto.PersonDto;
-import com.example.vote.exaption.PersonNotFoundException;
+import com.example.vote.exception.PersonNotFoundException;
 import com.example.vote.model.VoteType;
 import com.example.vote.service.PersonService;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -42,15 +42,17 @@ public class PersonRestControllerTest {
     @DisplayName("должен уметь создавать человека")
     public void createPerson() throws Exception {
         PersonDto personDto = new PersonDto(1,"Person","12367",VoteType.YES);
+
         given(personService.createPerson(personDto)).willReturn(personDto);
+
         mockMvc.perform(post("/api/v1/person")
                         .contentType("application/json")
                         .content("{\"id\": 1, \"name\": \"Person\",\"document\": \"12367\",\"voteType\": \"YES\"}"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.name", is("Person")));
+
         verify(personService).createPerson(personDto);
     }
-
 
     @Test
     @DisplayName("должен уметь обновлять человека")
@@ -73,7 +75,7 @@ public class PersonRestControllerTest {
 
     @Test
     @DisplayName("должен уметь получать список людей")
-    public void getPersonList() throws Exception {
+    public void getPersons() throws Exception {
         List<PersonDto> expectedPersonList = Arrays.asList(
                 PersonDto.builder().id(1).name("Person1").document("Doc1").voteType(VoteType.YES).build(),
                 PersonDto.builder().id(2).name("Person2").document("Doc2").voteType(VoteType.NO).build(),
