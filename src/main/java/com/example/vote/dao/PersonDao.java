@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  * DAO repository для операций по
- * - персонами.
+ * - персонами
  * - проекции по статистистике
  *
  */

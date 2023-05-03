@@ -9,8 +9,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -21,7 +19,6 @@ import java.util.stream.Collectors;
 public class PersonServiceImpl implements PersonService {
 
     private final PersonDao personDao;
-
     private final PersonMapper personMapper;
 
     @Override
@@ -31,24 +28,23 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     @Transactional
-    public List<PersonDto> deletePersonById(Integer id) {
-        personDao.deleteById(id); // soft delete
-        return personDao.findAll().stream().map(personMapper::toDto).collect(Collectors.toList());
+    public void deletePersonById(Integer id) throws PersonNotFoundException {
+        Person person = personDao.findById(id).orElseThrow(() -> new PersonNotFoundException ("Person not found"));
+        person.setIs_deleted(1);
+        personDao.save(person);
     }
 
     @Override
     @Transactional
     public PersonDto createPerson(PersonDto personDto) {
-        var person = new Person(null, personDto.getName(), personDto.getDocument(), personDto.getVoteType());
-
+        var person = new Person(null, personDto.getName(), personDto.getDocument(), personDto.getVoteType(),0);
         return personMapper.toDto(personDao.save(person));
     }
 
     @Override
     @Transactional
     public PersonDto updatePerson(PersonDto personDto)  {
-        Person person = new Person(personDto.getId(), personDto.getName(), personDto.getDocument(), personDto.getVoteType());
-
+        Person person = new Person(personDto.getId(), personDto.getName(), personDto.getDocument(), personDto.getVoteType(),0);
         return personMapper.toDto(personDao.save(person));
     }
 
@@ -56,9 +52,5 @@ public class PersonServiceImpl implements PersonService {
     @Override
     public PersonDto getPersonById(Integer id) throws PersonNotFoundException {
         return personMapper.toDto(personDao.findById(id).orElseThrow(() -> new PersonNotFoundException(id)));
-    }
-
-    private PErsonDto toDto() {
-
     }
 }

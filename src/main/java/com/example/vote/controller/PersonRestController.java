@@ -18,7 +18,7 @@ import java.util.List;
 @RequestMapping(path = "/persons")
 public class PersonRestController {
 
-    private final PersonService service;
+    private final PersonService personService;
 
     @GetMapping
     public List<PersonDto> getPersonList() {
@@ -30,17 +30,17 @@ public class PersonRestController {
         return personService.getPersonById(id);
     }
 
-    @DeleteMapping("/api/v1/person/{id}")
-    public void deletePersonById(@PathVariable(name = "id") Integer id) {
+    @DeleteMapping("/{id}")
+    public void deletePersonById(@PathVariable(name = "id") Integer id) throws PersonNotFoundException{
         personService.deletePersonById(id);
     }
 
-    @PutMapping("/api/v1/person/{id}")
+    @PutMapping("/{id}")
     public PersonDto updatePerson(@Validated @RequestBody PersonDto PersonDto)  {
         return personService.updatePerson(PersonDto);
     }
 
-    @PostMapping("/api/v1/person")
+    @PostMapping()
     public PersonDto createPerson(@Validated @RequestBody PersonDto PersonDto) {
         return personService.createPerson(PersonDto);
     }

@@ -41,11 +41,7 @@ public class PersonServiceTest {
     @Test
     @DisplayName("должен уметь отдавать список человек")
     public void testGetAllPersons() {
-//        List<Person> persons = new ArrayList<>(); // List.of
-  //      persons.add(new Person(1, "John", "123456789", VoteType.YES));
-    //    when(personDao.findAll()).thenReturn(persons);
-
-        when(personDao.findAll()).thenReturn(List.of(new Person(1, "John", "123456789", VoteType.YES)));
+        when(personDao.findAll()).thenReturn(List.of(new Person(1, "John", "123456789", VoteType.YES,0)));
 
         List<PersonDto> personDtos = new ArrayList<>();
         personDtos.add(new PersonDto(1, "John", "123456789", VoteType.YES));
@@ -58,28 +54,11 @@ public class PersonServiceTest {
         assertEquals(personDtos.get(0).getVoteType(), result.get(0).getVoteType());
     }
 
-    @Test
-    @DisplayName("должен уметь удалять человека")
-    public void testDeletePersonById() {
-        List<Person> persons = new ArrayList<>();
-        persons.add(new Person(1, "John", "123456789", VoteType.YES));
-        when(personDao.findAll()).thenReturn(persons);
-
-        List<PersonDto> personDtos = new ArrayList<>();
-        personDtos.add(new PersonDto(1, "John", "123456789", VoteType.YES));
-        when(personMapper.toDto(any())).thenReturn(personDtos.get(0));
-
-        List<PersonDto> result = personService.deletePersonById(1);
-        assertEquals(1, result.size());
-        assertEquals(personDtos.get(0).getName(), result.get(0).getName());
-        assertEquals(personDtos.get(0).getDocument(), result.get(0).getDocument());
-        assertEquals(personDtos.get(0).getVoteType(), result.get(0).getVoteType());
-    }
 
     @Test
     @DisplayName("должен уметь создавать человека")
     public void testCreatePerson() {
-        Person person = new Person(1, "John", "123456789", VoteType.YES);
+        Person person = new Person(1, "John", "123456789", VoteType.YES,0);
         when(personDao.save(any(Person.class))).thenReturn(person);
 
         PersonDto personDto = new PersonDto(null, "John", "123456789", VoteType.YES);
@@ -95,10 +74,10 @@ public class PersonServiceTest {
     @DisplayName("должен уметь обновлять человека")
     public void testUpdatePerson() {
         List<Person> persons = new ArrayList<>();
-        persons.add(new Person(1, "John", "123456789", VoteType.YES));
+        persons.add(new Person(1, "John", "123456789", VoteType.YES,0));
         when(personDao.findAll()).thenReturn(persons);
 
-        Person person = new Person(1, "Johnny", "987654321", VoteType.NO);
+        Person person = new Person(1, "Johnny", "987654321", VoteType.NO,0);
         when(personDao.save(any(Person.class))).thenReturn(person);
 
         PersonDto personDto = new PersonDto(1, "Johnny", "987654321", VoteType.NO);
@@ -115,7 +94,7 @@ public class PersonServiceTest {
     public void testGetPersonById() throws PersonNotFoundException {
         PersonDao personDao = mock(PersonDao.class);
 
-        when(personDao.findById(1)).thenReturn(Optional.of(new Person(1, "John", "123456789", VoteType.YES)));
+        when(personDao.findById(1)).thenReturn(Optional.of(new Person(1, "John", "123456789", VoteType.YES,0)));
         when(personMapper.toDto(any(Person.class))).thenReturn(new PersonDto(1, "John", "123456789", VoteType.YES));
 
         PersonService personService = new PersonServiceImpl(personDao, personMapper);

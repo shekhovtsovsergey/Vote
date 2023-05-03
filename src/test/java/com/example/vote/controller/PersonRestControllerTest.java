@@ -45,7 +45,7 @@ public class PersonRestControllerTest {
 
         given(personService.createPerson(personDto)).willReturn(personDto);
 
-        mockMvc.perform(post("/api/v1/person")
+        mockMvc.perform(post("/persons")
                         .contentType("application/json")
                         .content("{\"id\": 1, \"name\": \"Person\",\"document\": \"12367\",\"voteType\": \"YES\"}"))
                 .andExpect(status().isOk())
@@ -59,7 +59,7 @@ public class PersonRestControllerTest {
     public void updatePerson() throws Exception {
         PersonDto expectedPerson = new PersonDto(1,"Person","12367",VoteType.YES);
         given(personService.updatePerson(expectedPerson)).willReturn(expectedPerson);
-        mockMvc.perform(put("/api/v1/person/1")
+        mockMvc.perform(put("/persons/1")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(toJsonString(expectedPerson)))
                 .andDo(print())
@@ -83,7 +83,7 @@ public class PersonRestControllerTest {
         );
 
         given(personService.getAllPersons()).willReturn(expectedPersonList);
-        mockMvc.perform(get("/api/v1/persons"))
+        mockMvc.perform(get("/persons"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(3)))
                 .andExpect(jsonPath("$[0].id", Matchers.is(1)))
@@ -113,7 +113,7 @@ public class PersonRestControllerTest {
                 .voteType(VoteType.YES)
                 .build();
         given(personService.getPersonById(1)).willReturn(expectedPerson);
-        mockMvc.perform(get("/api/v1/person/1"))
+        mockMvc.perform(get("/persons/1"))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id").value(1))
@@ -127,7 +127,7 @@ public class PersonRestControllerTest {
     @Test
     @DisplayName("должен уметь удалять человека по id")
     public void deletePersonById() throws Exception {
-        mockMvc.perform(delete("/api/v1/person/1"))
+        mockMvc.perform(delete("/persons/1"))
                 .andExpect(status().isOk());
         verify(personService).deletePersonById(1);
     }
@@ -136,7 +136,7 @@ public class PersonRestControllerTest {
     @DisplayName("должен уметь ловить ошибки и возвращать бэд-реквест")
     public void handleNOtFound_ReturnBadRequest() throws Exception {
         given(personService.getPersonById(1)).willThrow(new PersonNotFoundException("Person NOt Found, check your request"));
-        mockMvc.perform(get("/api/v1/person/1"))
+        mockMvc.perform(get("/persons/1"))
                 .andExpect(status().isBadRequest())
                 .andExpect(content().string("Person NOt Found, check your request"));
         verify(personService).getPersonById(1);

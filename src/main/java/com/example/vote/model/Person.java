@@ -7,24 +7,27 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name = "persons", schema = "vote") // schema
+@Table(name = "persons", schema = "public")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
+@ToString
 public class Person {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // sequence
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
     /**
-     * наиме6новаеием
+     * Имя персоны
      */
     private String name;
     private String document;
+
+    @Column(name = "VOTE_TYPE")
     @Enumerated(EnumType.STRING)
     private VoteType voteType;
-
+    private int is_deleted;
 }
 
