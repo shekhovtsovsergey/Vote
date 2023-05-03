@@ -31,7 +31,7 @@ public class PersonRestController {
     }
 
     @DeleteMapping("/{id}")
-    public void deletePersonById(@PathVariable(name = "id") Integer id) throws PersonNotFoundException{
+    public void deletePersonById(@PathVariable(name = "id") Integer id) throws Throwable {
         personService.deletePersonById(id);
     }
 

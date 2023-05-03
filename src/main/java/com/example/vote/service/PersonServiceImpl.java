@@ -28,13 +28,8 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     @Transactional
-    public void deletePersonById(Integer id) throws PersonNotFoundException {
-        Person person = null;
-        try {
-            person = (Person) personDao.findByIdAndIsDeleted(id, 0).orElseThrow(() -> new PersonNotFoundException("Person not found"));
-        } catch (Throwable e) {
-            throw new RuntimeException(e);
-        }
+    public void deletePersonById(Integer id) throws Throwable {
+        Person person = (Person) personDao.findByIdAndIsDeleted(id, 0).orElseThrow(() -> new PersonNotFoundException("Person not found"));
         person.setIs_deleted(1);
         personDao.save(person);
     }
